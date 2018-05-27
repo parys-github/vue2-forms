@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i');
+#app {
+    display: block;
+    margin: 0 auto;
+    width: $interactive-width;
+    height: $interactive-height;
+    min-height: 460px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    font-family: $primary-font;
+    line-height: inherit;
+
+    button.el-button.readmore{
+        background: none;
+        border: none;
+        box-shadow: none;
+
+            &:hover{
+                background: none;
+                border: none;
+                box-shadow: none;
+                color: $vue-green;
+            }
+    }
+    nav {
+        z-index: 9;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        button{
+            display: block;
+            cursor: pointer;
+        }
+
+    }
+    .transition {
+        .slide {
+            .content {
+                .scrolled {
+                    overflow: scroll;
+                    height: 315px;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                }
+                .intro-logo {
+                    .logo {
+                        width: 90px
+                    }
+                }
+                ul {
+                    &.default-list {
+                        display: inline-block;
+                        text-align: left;
+                    }
+                }
+            }
+            .el-carousel {
+                &__indicators {
+                    li {
+                        &.is-active {
+                            button,
+                            &:focus {
+                                border: none;
+                                background-color: $vue-green;
+                            }
+                        }
+                        button,
+                        &:focus {
+                            border: none;
+                        }
+                    }
+                }
+            }
+            h1,
+            h2,
+            h3 {
+                font-family: $primary-font;
+                color: white;
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            }
+
+        }
+    }
+    ul {
+        &.answers {
+            list-style-type: none;
+            display: inline-block;
+            width: auto;
+            text-align: left;
+        }
+    }
+    button {
+        transition: $main-transition;
+        font-family: $primary-font;
+        &.selected {
+            border: 1px solid red;
+            background-color: red;
+            color: white;
+        }
+        &:focus {
+            background: white;
+            border: 1px solid #dcdfe6;
+            color: #606266;
+        }
+        &:hover {
+            background-color: $btn-hover;
+            border-color: $btn-hover;
+            color: white;
+        }
+        i {
+            &::before {
+                font-size: $small-icon-size;
+            }
+        }
+        i.left-i {
+            padding-right: 10px;
+        }
+        i.right-i {
+            padding-left: 10px;
+        }
+    }
+    .slide {
+        position: relative;
+    }
+    a {
+        color: $vue-navy;
+        transition: $main-transition;
+        &:hover {
+            color: $vue-green;
+        }
+    }
+    textarea,
+    input {
+        transition: $main-transition;
+        background-color: $input-bg;
+        &:focus {
+            border-color: $vue-green;
+            box-shadow: $focus-shadow;
+            background-color: white;
+        }
+    }
+    i {
+        font-size: $default-icon-size;
+    }
+    /* example only*/
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+    .bg-purple {
+        background: #d3dce6;
+    }
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+    .row-bg {
+        background-color: #f9fafc;
+    }
+    .layout-grid {
+        margin: 30px 10px;
+    }
+    .caution,
+    .success {
+        color: white;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 5px auto;
+    }
+    .caution {
+        background-color: #F56C6C;
+    }
+    .success {
+        background-color: #13ce66;
+    }
+    .pagination {
+        padding: 5px;
+        background-color: #ffffff70;
+    }
+    .el-input-group {
+        .el-input-group__append {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: 0;
+            background-color: transparent;
+        }
+        input {
+            padding-right: 40px;
+        }
+    }
+    .el-pager {
+        .number {
+            transition: $main-transition;
+        }
+    }
+    .radio-float {
+        padding: 10px;
+        .el-radio {
+            display: list-item;
+            list-style: none;
+            margin: 0 0 5px 0;
+            text-align: left;
+            &.is-checked {
+                span {
+                    color: $vue-green;
+                    transition: $main-transition;
+                }
+            }
+            .el-radio__label {
+                color: black;
+                font-size: 16px;
+            }
+            .el-radio__input {
+                &.is-checked {
+                    .el-radio__inner {
+                        border-color: #3eb780;
+                        background: #3eb780;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .el-radio__inner {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .checkbox-group {
+        width: 108px;
+        margin: 0 auto;
+        .checkbox-float {
+            padding: 10px;
+            .el-checkbox {
+                display: list-item;
+                list-style: none;
+                margin: 0 0 5px 0;
+                text-align: left;
+                &.is-checked {
+                    span {
+                        color: $vue-green;
+                        transition: $main-transition;
+                    }
+                }
+                .el-checkbox__label {
+                    color: black;
+                    font-size: 16px;
+                }
+                .el-checkbox__input {
+                    &.is-checked {
+                        .el-checkbox__inner {
+                            border-color: #3eb780;
+                            background: #3eb780;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                    .el-checkbox__inner {
+                        width: 20px;
+                        height: 20px;
+                        &:after {
+                            width: 7px;
+                            height: 9px;
+                            left: 5px;
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+html{
+        body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+
+        .size-badge{
+            position: fixed;
+            background: #fff;
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            text-align: center;
+            box-sizing: border-box;
+            outline: 0;
+            margin: 0;
+            transition: .1s;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            left: 10px;
+            bottom: 10px;
+            font-family: $primary-font;
+            float: left;
+        }
+    }
+}

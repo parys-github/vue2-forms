@@ -1,0 +1,58 @@
+/* Element mobile devices */
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@media (min-width: 480px) and #{$retina} {
+  body {
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+
+}
+@media (min-width: 1601px) {
+    body {
+        .size-badge {
+            &:after {
+                content: "Wide workstations";
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1260px) and (max-width: 1600px) {
+    body {
+        .size-badge {
+            &:after {
+                content: "Laptop screen";
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1259px) {
+    body {
+        .size-badge {
+            &:after {
+                content: "Tablets, Ipads (landscape)";
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1023px) {
+    body {
+        .size-badge {
+            &:after {
+                content: "Tablets, Ipads (landscape)";
+            }
+        }
+    }
+}

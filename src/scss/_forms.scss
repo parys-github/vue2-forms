@@ -1,0 +1,190 @@
+/* Element mobile devices */
+
+.el-form {
+    .el-form-item {
+            margin-bottom: 17px;
+        &.terms-block {
+            .el-checkbox-group {
+                width: min-content;
+                height: 41px;
+                float: left;
+            }
+        }
+        .el-form-item__error {
+                font-size: 11px;
+                top: 40px;
+            }
+
+        &:last-child {
+            margin-bottom: 0;
+            .el-form-item__content {
+                width: 100%;
+                text-align: right;
+            }
+        }
+    }
+    label.el-form-item__label {
+        width: 26%;
+        float: left;
+        position: relative;
+        background-color: rgba(211, 211, 211, 0.08);
+        border-radius: 5px;
+        margin-right: 1%;
+        border: solid 1px rgba(220, 223, 231, 0.52);
+    }
+    .el-form-item__content {
+        line-height: 40px;
+        position: relative;
+        font-size: 14px;
+        width: 73%;
+        float: left;
+        text-align: left;
+    }
+    .el-checkbox-group {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: solid 1px rgba(220, 223, 231, 0.5);
+        border-radius: 5px;
+        padding: 0 10px;
+    }
+    label.el-radio {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: solid 1px rgba(220, 223, 231, 0.5);
+        height: 42px;
+        line-height: 42px;
+        padding: 0 10px;
+        border-radius: 5px;
+        margin-right: -20px;
+    }
+    .el-radio__input.is-checked + .el-radio__label {
+        color: $third-color;
+    }
+    .el-radio__input.is-checked {
+        .el-radio__inner {
+            border-color: $third-color;
+            background: $third-color;
+
+            &:after {
+                width: 7px;
+                height: 7px;
+            }
+        }
+    }
+    .el-radio__inner {
+        width: 20px;
+        height: 20px;
+    }
+    .el-button--primary {
+        border-color: $third-color;
+        background: $third-color;
+    }
+    .el-switch.is-checked .el-switch__core{
+        border-color: $third-color;
+        background: $third-color;
+    }
+    .el-checkbox__input{
+
+        &.is-checked{
+            .el-checkbox__inner{
+                border-color: $third-color;
+                background: $third-color;
+            }
+            &.el-checkbox__label {
+                    color: $third-color;
+                }
+        }
+        .el-checkbox__inner {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            &:after{
+                height: 10px;
+                left: 6px;
+                top: 2px;
+                width: 4px;
+                border-width: 3px;
+            }
+
+        }
+    }
+    .address-block{
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        .el-input{
+            width: 48.05%;
+            float: left;
+            margin-bottom: 15px;
+            &:nth-child(1), &:nth-child(3) {
+                margin-right: 17px;
+            }
+        }
+        .el-select{
+            .el-input{
+                width: 100%;
+                float: left;
+                margin-right: 16px!important;
+            }
+        }
+    }
+    .city-block{
+        width: 48.05%;
+        position: absolute;
+        left: 65%;
+        margin-top: -57px;
+    }
+    .zip-block{
+        position: absolute;
+        width: 48.05%;
+        left: 26%;
+        margin-left: 1%;
+    }
+    .state-block{
+        left: 65%;
+        position: relative;
+        .el-select{
+            width: 48.05%;
+        }
+    }
+    .readmore {
+        position: relative;
+        top: 13px;
+        left: 10px;
+        font-size: 11px;
+
+    }
+
+    .el-checkbox__input.is-checked+.el-checkbox__label {
+        color: $third-color;
+    }
+    .el-checkbox{
+        margin: 0 20px 0 0;
+    }
+    #range{
+        color: $third-color;
+    }
+    input[type="range" i] {
+        cursor: pointer;
+        &:focus{
+             box-shadow: none;
+        }
+
+    }
+    input.el-input__inner{
+        height: 42px;
+        line-height: 42px;
+    }
+}
+.el-form-item.is-required .el-form-item__label:before {
+    position: absolute;
+    right: 0;
+    top: -8px;
+    font-size: 18px;
+}
+.el-select-dropdown__wrap {
+    ul {
+        li {
+            font-family: $primary-font;
+        }
+    }
+}

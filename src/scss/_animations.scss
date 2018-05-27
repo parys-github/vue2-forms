@@ -1,0 +1,185 @@
+/* global definitions */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* navi buttons animations */
+
+@keyframes r-btn-anima {
+    0% {
+        opacity: 0;
+        bottom: -100%
+    }
+    33% {
+        opacity: .8;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 10px;
+    }
+}
+
+.r-btn-anima {
+    right: 10px;
+    animation-name: r-btn-anima;
+    animation-duration: .7s;
+    animation-delay: .9s;
+}
+
+@keyframes l-btn-anima {
+    0% {
+        opacity: 0;
+        bottom: -100%
+    }
+    33% {
+        opacity: .8;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 10px;
+    }
+}
+
+.l-btn-anima {
+    left: 10px;
+    animation-name: l-btn-anima;
+    animation-duration: .7s;
+    animation-delay: .9s;
+}
+
+/* transitions */
+
+.transition {
+    transition: all .2s ease-in;
+}
+
+/********************/
+
+/* intro animations */
+
+/********************/
+
+.intro-element,
+.l-btn-anima,
+.r-btn-anima {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    animation-fill-mode: forwards;
+}
+
+/***/
+
+@keyframes intro-animation1 {
+    0% {
+        opacity: 0;
+        top: +100%
+    }
+    100% {
+        opacity: 1;
+        top: 50px;
+    }
+}
+
+.intro-animation1 {
+    left: 100px;
+    animation-name: intro-animation1;
+    animation-duration: .5s;
+    animation-delay: .5s;
+}
+
+/***/
+
+@keyframes intro-logo {
+    0% {
+        opacity: 0;
+        top: -100%
+    }
+    100% {
+        opacity: 1;
+        top: 50px;
+    }
+}
+
+.intro-logo {
+    left: 50%;
+    margin-left: -45px;
+    animation-name: intro-logo;
+    animation-duration: .5s;
+    animation-delay: .7s;
+}
+
+.intro-animation3 {
+    top: 250px;
+    left: 100px;
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    animation-delay: 1.7s;
+}
+
+/* Global heading H1 animation */
+
+h1{
+    opacity: 0;
+    display: block;
+    position: relative;
+    animation-fill-mode: forwards;
+}
+
+@keyframes h1 {
+    0% {
+        opacity: 0;
+        top: -100px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+h1 {
+    animation-name: h1;
+    animation-duration: .8s;
+    animation-delay: .1s;
+}
+
+.position-one {
+    position: absolute;
+    left:50%;
+    margin-left: -130px;
+    top: 140px;
+    animation-delay: .9s;
+    color: #31536d;
+}
+
+.positions-two {
+    position: absolute;
+    left: 50%;
+    top: 280px;
+    margin-left: -43px;
+    animation-delay: 1s;
+
+    h5{
+        a{
+        text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

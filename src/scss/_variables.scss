@@ -1,0 +1,31 @@
+$interactive-width: 100%;
+$interactive-height: 100%;
+$primary-color: #cccccc;
+$secondary-color: #666666;
+$btn-hover: #666666;
+$link-color: #424242;
+$primary-font: 'Lato', sans-serif;
+$background-global: #ececec;
+$duration: all .3s ease-out;
+$main-transition: .3s ease-in-out;
+$focus-shadow: 0px 0px 10px 0px gba(0, 0, 0, 0.149);
+$input-bg: rgba(255, 255, 255, 0.54);
+$vue-navy: #34495f;
+$vue-green: #3eb780;
+$third-color: #61947d;
+$small-icon-size: 14px;
+$default-icon-size: 20px;
+$form-bg: #f9f9f9;
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+$xs: (max-width 575px);
+// Small screen / phone
+$sm: (max-width 767px);
+// Medium screen / tablet
+$md: (max-width 991px);
+// Large screen / desktop
+$lg: (max-width 1199px);
+// Extra large screen / wide desktop
+$xl: (max-width 1600px);
