@@ -28,13 +28,6 @@
                             ]">
                             <el-input v-model="ruleForm.email"></el-input>
                         </el-form-item>
-                        <!--<el-form-item label="Marketing Opt" prop="marketing">
-                            <el-checkbox-group v-model="ruleForm.marketing">
-                                <el-checkbox label="Company" name="type"></el-checkbox>
-                                <el-checkbox label="Company + Third Parties" name="type"></el-checkbox>
-                            </el-checkbox-group>
-                        </el-form-item>-->
-                        <!-- Address -->
                         <el-form-item label="Address" prop="street" class="address-block">
                             <el-input v-model="ruleForm.street" placeholder="Street"></el-input>
                         </el-form-item>
@@ -61,13 +54,9 @@
                         <el-form-item label="Charity to Donate" prop="charity">
                             <el-switch v-model="ruleForm.charity" id="activeDonate"></el-switch>
                         </el-form-item>
-                        <el-form-item v-model="showDonate" label="Donation" class="donate"><!-- v-if="ifChecked" NOT WORKING YET -->
-                            <input type="range" min="10" max="1000" step="1"
-                                   id="slider" class="range"
-                                   v-model="radius">
-                            <input type="number" min="10" max="1000" step="1"
-                                   id="range" class="text-input"
-                                   v-model="radius">
+                        <el-form-item v-model="ruleFormDonate" label="Donation" class="donate fadeInDown" v-if="ruleForm.charity">
+                            <input type="range" min="10" max="1000" step="1" id="slider" class="range" v-model="ruleForm.radius">
+                            <input type="number" min="10" max="1000" step="1" id="range" class="text-input" v-model="ruleForm.radius">
                         </el-form-item>
                         <el-form-item label="Gender" prop="gender">
                             <el-radio-group v-model="ruleForm.gender">
@@ -98,8 +87,22 @@
 export default {
     props: ['conf'],
     data() {
+        let checkZip = (rule, value, callback) => {
+            if (!value) {
+                return callback(new Error('Please input postcode'));
+            } else {
+                const patt = new RegExp(/[0-9]{5}(-[0-9]{4})?/);
+                const res = patt.test(value);
+
+                if (res) {
+                    callback();
+                } else {
+                    callback(new Error('Enter correct ZIP code'));
+                }
+            }
+        };
     return {
-        ruleForm: { // basic form rules
+        ruleForm: {
             title: '',
             firstname: '',
             lastname: '',
@@ -110,22 +113,17 @@ export default {
             marketing: '',
             charity: false,
             gender: '',
-            terms: ''
+            terms: '',
+            radius: 10
         },
-        // ifChecked: true,
-        // el: '#activeDonate', // hidde and display donation scroller = NOT WORKING YET
-        // data: {
-         //    ifChecked: true
-        // },
-        dynamicValidateForm: { // email validation
+        dynamicValidateForm: {
             domains: [{
                 key: 1,
                 value: ''
               }],
               email: ''
             },
-        radius: 10, // minimal amound donation scroller
-        rules: { // requirde rulles execute and error message display
+        rules: {
             firstname: [
                 {required: true, message: 'Please input first name', trigger: 'blur'},
                 {min: 2, max: 99, message: 'Length should be at least 2 chars', trigger: 'blur'}
@@ -134,14 +132,14 @@ export default {
                 {required: true, message: 'Please input last name', trigger: 'blur'},
                 {min: 2, max: 99, message: 'Length should be at least 2 chars', trigger: 'blur'}
             ],
-            charity: [
-                {required: true, message: 'Please select this option and set amount', trigger: 'blur'}
-            ],
             gender: [
                 {required: true, message: 'Please select your gender', trigger: 'change'}
             ],
             terms: [
                 {required: true, message: 'Accepting terms and conditions is required   ', trigger: 'change'}
+            ],
+            zip: [
+                {validator: checkZip, trigger: 'blur'}
             ]
         },
     };
@@ -157,7 +155,7 @@ export default {
         }
     });
     },
-    resetForm(formName) { // all fields , checkbox and radiobuttons RESET
+    resetForm(formName) {
         this.$refs[formName].resetFields();
     },
      readTerms() { // Terma and conditions MODAL content
@@ -230,9 +228,6 @@ export default {
                  outline: none;
              }
         }
-
-        /*Removing spin boxes from input of type number */
-
         input[type="number"]::-webkit-outer-spin-button,
         input[type="number"]::-webkit-inner-spin-button {
             -webkit-appearance: none;
