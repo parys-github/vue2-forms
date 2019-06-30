@@ -1,0 +1,6 @@
+#
+# Exclude files from exporting
+#
+
+# Languages
+*.html linguist-language=JavaScript
