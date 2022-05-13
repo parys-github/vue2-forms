@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "element-ui": "^2.2.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.6.0",
     "jquery-mousewheel": "^3.1.13",
     "npm": "^5.10.0",
     "vue": "^2.5.2",
