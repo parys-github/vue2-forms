@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "element-ui": "^2.2.2",
+    "element-ui": "^2.15.8",
     "jquery": "^3.3.1",
     "jquery-mousewheel": "^3.1.13",
     "npm": "^5.10.0",
